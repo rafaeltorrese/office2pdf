@@ -12,8 +12,8 @@ wdFormatPDF = 17  # explain this
 target_directory = os.path.abspath(path_to_files)
 
 word = CreateObject('Word.Application')
-word.Visible = False
-for file in list_of_files:
+# word.Visible = False
+for file in list_of_files:    
     in_file = os.path.join(target_directory, file)
     filename, _ = os.path.splitext(file)
     filename_pdf = f'{filename.replace(" ", "_")}.pdf'        
@@ -21,6 +21,6 @@ for file in list_of_files:
     doc = word.Documents.Open(in_file)
     time.sleep(3)
     doc.SaveAs(out_file, FileFormat=wdFormatPDF)
-    doc.Close()
+    doc.Close()        
     print(f'{filename_pdf} was generated succesfully')
 word.Quit()
