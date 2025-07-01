@@ -71,3 +71,4 @@ __pypackages__/
 
 .env
 *~
+data.py
